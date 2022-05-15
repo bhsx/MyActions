@@ -3,5 +3,5 @@ process.argv.forEach((val, index) => {
   console.log(`${"_"+index+"_"}: ${"_"+val+"_"}`)
 })
 let a=JSON.stringify(process.argv[2])
-console.log(JSON.stringify(a))
+console.log(process.argv[2].split(""))
 // console.log(JSON.parse(process.argv.TEST1))
