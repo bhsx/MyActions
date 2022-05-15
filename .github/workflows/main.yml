@@ -54,7 +54,7 @@ jobs:
           fi
           for ((i=0;i<$user_num;i++))
           do
-          python3 C189Checkin.py <<EOF 
+          # python3 C189Checkin.py <<EOF 
           ${user_list[$i]} 
           ${pwd_list[$i]}
           EOF
