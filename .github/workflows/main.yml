@@ -55,7 +55,7 @@ jobs:
           for ((i=0;i<$user_num;i++))
           do
           # python3 C189Checkin.py <<EOF 
-          node app.js NAME=${user_list[$i]} PWD=${pwd_list[$i]}
+          node app.js NAME=${user_list[$i]} P2W1D=${pwd_list[$i]}
           #EOF
           done
         # Runs a single command using the runners shell
