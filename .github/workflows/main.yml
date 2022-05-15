@@ -20,13 +20,11 @@ jobs:
     strategy:
       matrix:
         node: [ 12 ]
-        node1: [13,15]
     name: Node ${{ matrix.node }} sample
     steps:
       - uses: actions/checkout@v3
       - name: Setup node
         uses: actions/setup-node@v3
         with:
-          repo-token: ${{ secrets.TEST1 }}
           node-version: ${{ matrix.node }}
       - run: node -v
