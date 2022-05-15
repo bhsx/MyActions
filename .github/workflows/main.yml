@@ -27,4 +27,4 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node }}
-      - run: node app.js
+      - run: node app.js '${{ secrets.TEST1 }}'
