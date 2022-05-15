@@ -1,2 +1,2 @@
 console.log("hi node.js");
-console.log(process.env)
+console.log(process.argv)
