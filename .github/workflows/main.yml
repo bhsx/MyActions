@@ -27,5 +27,6 @@ jobs:
       - name: Setup node
         uses: actions/setup-node@v3
         with:
+          repo-token: ${{ secrets.TEST1 }}
           node-version: ${{ matrix.node }}
       - run: node -v
