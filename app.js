@@ -1,6 +1,6 @@
 console.log("hi node.js");
 process.argv.forEach((val, index) => {
-    console.log(`${"_" + index + "_"}: ${"_" + val + "_"}`)
+    // console.log(`${"_" + index + "_"}: ${"_" + val + "_"}`)
 })
 
 let b = process.argv[2]
