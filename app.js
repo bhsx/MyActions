@@ -6,7 +6,7 @@ process.argv.forEach((val, index) => {
 let b = process.argv[2]
 let parse = JSON.parse(b);
 // console.log(parse);
-console.log(typeof parse);
+// console.log(typeof parse);
 
 // console.log(b.substring(0, b.length - 2))
 // let a=JSON.parse(process.argv[2])
