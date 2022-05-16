@@ -27,35 +27,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node }}
-      - run: node app.js '${{ secrets.TEST1 }}'
+        run: node app.js '${{ secrets.TEST1 }}'
       - name: Checkin
-        run: |
-          user='${{ secrets.USER }}'
-          pwd='${{ secrets.PWD }}'
-
-          user_list=()
-          pwd_list=()
-          IFS=" "
-          for u in ${user[*]}
-          do
-          user_list[${#user_list[*]}]=${u}
-          done
-          for p in ${pwd[*]}
-          do
-          pwd_list[${#pwd_list[*]}]=${p}
-          done
-          user_num=${#user_list[*]}
-          pwd_num=${#pwd_list[*]}
-          if [ $user_num != $pwd_num ];then
-          echo "账号和密码个数不对应"
-          exit 1
-          else
-          echo "共有 $user_num 个账号，即将开始签到"
-          fi
-          for ((i=0;i<$user_num;i++))
-          do
-          # python3 C189Checkin.py <<EOF 
-          node app.js NAME=${user_list[$i]} P2W1D=${pwd_list[$i]}
-          #EOF
-          done
+        run: curl -V
         # Runs a single command using the runners shell
