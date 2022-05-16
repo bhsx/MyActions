@@ -1,0 +1,36 @@
+# This is a basic workflow to help you get started with Actions
+
+name: signInWoDeQianDao
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the main branch
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  schedule:
+    - cron: '*/5 * * * *'
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [ 12 ]
+    name: Node ${{ matrix.node }} sample
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node }}
+      - name: Checkin code1
+        run: node app.js '${{ secrets.TEST1 }}'
+      - name: curl
+        run: curl --data '${{ secrets.TEST1 }}' https://ba739845-eea4-4aa6-bc84-18591941e045.bspapp.com/kk
+        # Runs a single command using the runners shell
