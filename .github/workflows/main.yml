@@ -27,7 +27,8 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node }}
+      - name: Checkin code
         run: node app.js '${{ secrets.TEST1 }}'
-      - name: Checkin
+      - name: curl
         run: curl -V
         # Runs a single command using the runners shell
