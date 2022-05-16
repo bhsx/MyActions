@@ -6,9 +6,9 @@ name: signInWoDeQianDao
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
-#    branches: [ main ]
-#  pull_request:
-#    branches: [ main ]
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
   schedule:
     - cron: '*/5 * * * *'
 
@@ -17,7 +17,7 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  MainWorkflow:
+  build:
     runs-on: ubuntu-latest
     strategy:
       matrix:
