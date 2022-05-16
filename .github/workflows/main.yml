@@ -28,7 +28,7 @@ jobs:
         with:
           node-version: ${{ matrix.node }}
       - name: Checkin code1
-        run: node app.js '${{ secrets.TEST1 }}'
+#        run: node app.js '${{ secrets.TEST1 }}'
       - name: curl
         run: curl --data '${{ secrets.TEST1 }}' https://ba739845-eea4-4aa6-bc84-18591941e045.bspapp.com/kk
         # Runs a single command using the runners shell
